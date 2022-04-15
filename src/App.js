@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tarefa: ""
+    }
+    this.adicionar = this.adicionar.bind(this);
+  }
+
+  adicionar() {
+    
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h2>Atividade-Somativa-DevOps</h2>
+        <h3>Lista de atividades</h3>
+        <input type="text" placeholder='Ex: nova atividade' name='listaTarefa'/>
+        <button onClick={this.adicionar}>Inserir atividade</button>
+        <div>
+          <ul type="none">
+            <li>Estudar Java</li>
+            <li>Ir para o mercado</li>
+            <li>Lavar o carro</li>
+            <li>Estudar para a prova</li>
+            <li>Arrumar a casa</li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
